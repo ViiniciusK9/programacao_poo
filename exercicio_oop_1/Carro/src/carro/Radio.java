@@ -61,10 +61,14 @@ public class Radio {
     }
     
     public void aumentarVolume(){
-        if(volume + 10 <= 100){
-            volume += 10;
+        if(isLigado()){
+            if(volume + 10 <= 100){
+                volume += 10;
+            } else {
+                System.out.println("Volume ja esta no maximo!");
+            }
         } else {
-            System.out.println("Volume ja esta no maximo!");
+            System.out.println("Radio desligado!");
         }
     }
     
@@ -77,21 +81,33 @@ public class Radio {
     }
     
     public void trocarEstacao(){
-        if(estacao.equals("")){
-            setEstacao("FM");
-        } else if (estacao.equals("FM")){
-            setEstacao("AM");
+        if(isLigado()){
+            if(estacao.equals("")){
+                setEstacao("FM");
+            } else if (estacao.equals("FM")){
+                setEstacao("AM");
+            } else {
+                setEstacao("FM");
+            }
         } else {
-            setEstacao("FM");
+            System.out.println("Radio desligado!");
         }
     }
     
     public void colocarEstacaoFM(){
-        setEstacao("FM");
+        if(isLigado()){
+            setEstacao("FM");
+        } else {
+            System.out.println("Radio desligado!");
+        }
     }
     
     public void colocarEstacaoAM(){
-        setEstacao("AM");
+        if(isLigado()){
+            setEstacao("AM");
+        } else {
+            System.out.println("Radio desligado!");
+        }  
     }
     
     public void ligarRadio(){
@@ -111,19 +127,23 @@ public class Radio {
     }
     
     public void mudarFrequencia(float frequencia){
-        if(frequencia >= 0 && frequencia <= 200){
-            setFrequencia(frequencia);
+        if(isLigado()){
+            if(frequencia >= 0 && frequencia <= 200){
+                setFrequencia(frequencia);
+            } else {
+                System.out.println("Frequencia invalida!");
+            }
         } else {
-            System.out.println("Frequencia invalida!");
-        }
+            System.out.println("Radio desligado!");
+        } 
     }
     
-    public void status(String nome){
-        System.out.println("Nome: " + nome);
-        System.out.println("Ligado: " + this.ligado);
-        System.out.println("Estacao: " + this.estacao);
-        System.out.println("Frequencia: " + this.frequencia);
-        System.out.println("Volume: " + this.volume);
-        System.out.println("");
+    public String toString(String nome){
+        return ("Nome: " + nome) + ('\n') +
+        ("Ligado: " + this.ligado) + ('\n') +
+        ("Estacao: " + this.estacao) + ('\n') +
+        ("Frequencia: " + this.frequencia) + ('\n') +
+        ("Volume: " + this.volume) + ('\n');
+        
     }
 }
