@@ -117,4 +117,13 @@ public class Radio {
             System.out.println("Frequencia invalida!");
         }
     }
+    
+    public void status(String nome){
+        System.out.println("Nome: " + nome);
+        System.out.println("Ligado: " + this.ligado);
+        System.out.println("Estacao: " + this.estacao);
+        System.out.println("Frequencia: " + this.frequencia);
+        System.out.println("Volume: " + this.volume);
+        System.out.println("");
+    }
 }
