@@ -1,21 +1,82 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package calculadora;
+
+import javax.swing.UIManager;
 
 /**
  *
- * @author vinic
+ * @author vinicius koncicoski
+ * @github ViiniciusK9
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
+    private String primeiroNumero;
+    private String operador;
+    private String segundoNumero;
+    
     /**
      * Creates new form TelaPrincipal
      */
+    
     public TelaPrincipal() {
+        this.primeiroNumero = "";
+        this.operador = "";
+        this.segundoNumero = "";
         initComponents();
     }
+
+    public String getPrimeiroNumero() {
+        return primeiroNumero;
+    }
+
+    public void setPrimeiroNumero(String primeiroNumero) {
+        this.primeiroNumero = primeiroNumero;
+    }
+
+    public String getOperador() {
+        return operador;
+    }
+
+    public void setOperador(String operador) {
+        if(verificarOperador()){
+            // operador ja existente erro
+        } else{
+            this.operador = operador;
+        }
+        
+    }
+
+    public String getSegundoNumero() {
+        return segundoNumero;
+    }
+
+    public void setSegundoNumero(String segundoNumero) {
+        this.segundoNumero = segundoNumero;
+    }
+    
+    public boolean verificarOperador(){
+        if(this.operador.equals("")){
+            return false;
+        } else{
+            return true;
+        }
+    } 
+    
+    public boolean verificarPrimeiroNumero(){
+        if(this.primeiroNumero.equals("")){
+            return false;
+        } else{
+            return true;
+        }
+    }
+    
+    public boolean verificarSegundoNumero(){
+        if(this.segundoNumero.equals("")){
+            return false;
+        } else{
+            return true;
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,48 +107,115 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
+        setResizable(false);
 
         edtTela.setEditable(false);
+        edtTela.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         edtTela.setToolTipText("");
 
         btnMultiplicacao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnMultiplicacao.setText("*");
+        btnMultiplicacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicacaoActionPerformed(evt);
+            }
+        });
 
         btnZero.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnZero.setText("0");
+        btnZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnZeroActionPerformed(evt);
+            }
+        });
 
         btnDivisao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnDivisao.setText("/");
+        btnDivisao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivisaoActionPerformed(evt);
+            }
+        });
 
         btnResultado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnResultado.setText("=");
+        btnResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResultadoActionPerformed(evt);
+            }
+        });
 
         btnUm.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnUm.setText("1");
+        btnUm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUmActionPerformed(evt);
+            }
+        });
 
         btnDois.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnDois.setText("2");
+        btnDois.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoisActionPerformed(evt);
+            }
+        });
 
         btnTres.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnTres.setText("3");
+        btnTres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTresActionPerformed(evt);
+            }
+        });
 
         btnAdicao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnAdicao.setText("+");
+        btnAdicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicaoActionPerformed(evt);
+            }
+        });
 
         btnQuatro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnQuatro.setText("4");
+        btnQuatro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuatroActionPerformed(evt);
+            }
+        });
 
         btnCinco.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCinco.setText("5");
+        btnCinco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCincoActionPerformed(evt);
+            }
+        });
 
         btnSeis.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSeis.setText("6");
+        btnSeis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeisActionPerformed(evt);
+            }
+        });
 
         btnSubtracao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSubtracao.setText("-");
+        btnSubtracao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubtracaoActionPerformed(evt);
+            }
+        });
 
         btnSete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSete.setText("7");
+        btnSete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeteActionPerformed(evt);
+            }
+        });
 
         btnOito.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnOito.setText("8");
@@ -99,6 +227,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         btnNove.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnNove.setText("9");
+        btnNove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNoveActionPerformed(evt);
+            }
+        });
         btnNove.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 btnNoveKeyPressed(evt);
@@ -183,11 +316,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(btnTres, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAdicao, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMultiplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDivisao, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnMultiplicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnDivisao, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -197,6 +331,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btnOitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOitoActionPerformed
         // TODO add your handling code here:
+        if(verificarOperador()){
+            // tem operador
+            this.segundoNumero += "8";
+            this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
+        } else {
+            // não tem operador
+            this.primeiroNumero += "8";
+            this.edtTela.setText(this.primeiroNumero);
+        }
     }//GEN-LAST:event_btnOitoActionPerformed
 
     private void btnNoveKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnNoveKeyPressed
@@ -204,8 +347,195 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNoveKeyPressed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-        edtTela.setText("");
+        this.edtTela.setText("");
+        this.primeiroNumero = "";
+        this.operador = "";
+        this.segundoNumero = "";
     }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUmActionPerformed
+        // TODO add your handling code here:
+        if(verificarOperador()){
+            // tem operador
+            this.segundoNumero += "1";
+            this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
+        } else {
+            // não tem operador
+            this.primeiroNumero += "1";
+            this.edtTela.setText(this.primeiroNumero);
+        }
+    }//GEN-LAST:event_btnUmActionPerformed
+
+    private void btnDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoisActionPerformed
+        // TODO add your handling code here:
+        if(verificarOperador()){
+            // tem operador
+            this.segundoNumero += "2";
+            this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
+        } else {
+            // não tem operador
+            this.primeiroNumero += "2";
+            this.edtTela.setText(this.primeiroNumero);
+        }
+    }//GEN-LAST:event_btnDoisActionPerformed
+
+    private void btnTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTresActionPerformed
+        // TODO add your handling code here:
+        if(verificarOperador()){
+            // tem operador
+            this.segundoNumero += "3";
+            this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
+        } else {
+            // não tem operador
+            this.primeiroNumero += "3";
+            this.edtTela.setText(this.primeiroNumero);
+        }
+    }//GEN-LAST:event_btnTresActionPerformed
+
+    private void btnQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuatroActionPerformed
+        // TODO add your handling code here:
+        if(verificarOperador()){
+            // tem operador
+            this.segundoNumero += "4";
+            this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
+        } else {
+            // não tem operador
+            this.primeiroNumero += "4";
+            this.edtTela.setText(this.primeiroNumero);
+        }
+    }//GEN-LAST:event_btnQuatroActionPerformed
+
+    private void btnCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCincoActionPerformed
+        // TODO add your handling code here:
+        if(verificarOperador()){
+            // tem operador
+            this.segundoNumero += "5";
+            this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
+        } else {
+            // não tem operador
+            this.primeiroNumero += "5";
+            this.edtTela.setText(this.primeiroNumero);
+        }
+    }//GEN-LAST:event_btnCincoActionPerformed
+
+    private void btnSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeisActionPerformed
+        // TODO add your handling code here:
+        if(verificarOperador()){
+            // tem operador
+            this.segundoNumero += "6";
+            this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
+        } else {
+            // não tem operador
+            this.primeiroNumero += "6";
+            this.edtTela.setText(this.primeiroNumero);
+        }
+    }//GEN-LAST:event_btnSeisActionPerformed
+
+    private void btnSeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeteActionPerformed
+        // TODO add your handling code here:
+        if(verificarOperador()){
+            // tem operador
+            this.segundoNumero += "7";
+            this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
+        } else {
+            // não tem operador
+            this.primeiroNumero += "7";
+            this.edtTela.setText(this.primeiroNumero);
+        }
+    }//GEN-LAST:event_btnSeteActionPerformed
+
+    private void btnZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZeroActionPerformed
+        // TODO add your handling code here:
+        if(verificarOperador()){
+            // tem operador
+            if(verificarSegundoNumero()){
+                this.segundoNumero += "0";
+                this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
+            }
+        } else {
+            // não tem operador
+            if(verificarPrimeiroNumero()){
+                this.primeiroNumero += "0";
+                this.edtTela.setText(this.primeiroNumero);
+            }
+        }
+    }//GEN-LAST:event_btnZeroActionPerformed
+
+    private void btnNoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoveActionPerformed
+        // TODO add your handling code here:
+        if(verificarOperador()){
+            // tem operador
+            this.segundoNumero += "9";
+            this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
+        } else {
+            // não tem operador
+            this.primeiroNumero += "9";
+            this.edtTela.setText(this.primeiroNumero);
+        }
+    }//GEN-LAST:event_btnNoveActionPerformed
+
+    private void btnMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicacaoActionPerformed
+        // TODO add your handling code here:
+        if(verificarPrimeiroNumero() && !verificarSegundoNumero()){
+            this.operador = " * ";
+            this.edtTela.setText(this.primeiroNumero + this.operador);
+        }
+    }//GEN-LAST:event_btnMultiplicacaoActionPerformed
+
+    private void btnDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisaoActionPerformed
+        // TODO add your handling code here:
+        if(verificarPrimeiroNumero() && !verificarSegundoNumero()){
+            this.operador = " / ";
+            this.edtTela.setText(this.primeiroNumero + this.operador);
+        }
+    }//GEN-LAST:event_btnDivisaoActionPerformed
+
+    private void btnAdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicaoActionPerformed
+        // TODO add your handling code here:
+        if(verificarPrimeiroNumero() && !verificarSegundoNumero()){
+            this.operador = " + ";
+            this.edtTela.setText(this.primeiroNumero + this.operador);
+        }
+    }//GEN-LAST:event_btnAdicaoActionPerformed
+
+    private void btnSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtracaoActionPerformed
+        // TODO add your handling code here:
+        if(verificarPrimeiroNumero() && !verificarSegundoNumero()){
+            this.operador = " - ";
+            this.edtTela.setText(this.primeiroNumero + this.operador);
+        }
+    }//GEN-LAST:event_btnSubtracaoActionPerformed
+
+    private void btnResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoActionPerformed
+        // TODO add your handling code here:
+        if(verificarOperador() && verificarPrimeiroNumero() && verificarSegundoNumero()){
+            int primeiroNumConvertido = Integer.parseInt(this.primeiroNumero);
+            int segundoNumConvertido = Integer.parseInt(this.segundoNumero);
+            int resultado = 0;
+            
+            switch (this.operador) {
+                case " + ": 
+                    resultado = (primeiroNumConvertido + segundoNumConvertido);
+                    break;
+                case " - ":  
+                    resultado = (primeiroNumConvertido - segundoNumConvertido);
+                    break;
+                case " / ": 
+                    resultado = (primeiroNumConvertido / segundoNumConvertido);
+                    break;
+                case " * ": resultado = (primeiroNumConvertido * segundoNumConvertido);
+                    break;
+            }
+            
+            String auxResultado = String.valueOf(resultado);
+            this.primeiroNumero = auxResultado;
+            this.operador = "";
+            this.segundoNumero = "";
+            
+            this.edtTela.setText(auxResultado);
+            
+        }
+    }//GEN-LAST:event_btnResultadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,12 +547,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
+            javax.swing.UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());     
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
