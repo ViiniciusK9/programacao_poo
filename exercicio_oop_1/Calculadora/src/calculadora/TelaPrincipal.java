@@ -1,5 +1,6 @@
 package calculadora;
 
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -37,12 +38,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     public void setOperador(String operador) {
-        if(verificarOperador()){
-            // operador ja existente erro
-        } else{
-            this.operador = operador;
-        }
-        
+        this.operador = operador;
     }
 
     public String getSegundoNumero() {
@@ -54,25 +50,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
     
     public boolean verificarOperador(){
-        if(this.operador.equals("")){
+        if (this.operador.equals("")) {
             return false;
-        } else{
+        } else {
             return true;
         }
     } 
     
     public boolean verificarPrimeiroNumero(){
-        if(this.primeiroNumero.equals("")){
+        if (this.primeiroNumero.equals("")) {
             return false;
-        } else{
+        } else {
             return true;
         }
     }
     
     public boolean verificarSegundoNumero(){
-        if(this.segundoNumero.equals("")){
+        if (this.segundoNumero.equals("")) {
             return false;
-        } else{
+        } else {
             return true;
         }
     }
@@ -330,8 +326,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOitoActionPerformed
-        // TODO add your handling code here:
-        if(verificarOperador()){
+        if (verificarOperador()) {
             // tem operador
             this.segundoNumero += "8";
             this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
@@ -343,7 +338,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOitoActionPerformed
 
     private void btnNoveKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnNoveKeyPressed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnNoveKeyPressed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
@@ -354,8 +348,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUmActionPerformed
-        // TODO add your handling code here:
-        if(verificarOperador()){
+        if (verificarOperador()) {
             // tem operador
             this.segundoNumero += "1";
             this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
@@ -367,8 +360,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUmActionPerformed
 
     private void btnDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoisActionPerformed
-        // TODO add your handling code here:
-        if(verificarOperador()){
+        if (verificarOperador()) {
             // tem operador
             this.segundoNumero += "2";
             this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
@@ -380,8 +372,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDoisActionPerformed
 
     private void btnTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTresActionPerformed
-        // TODO add your handling code here:
-        if(verificarOperador()){
+        if (verificarOperador()) {
             // tem operador
             this.segundoNumero += "3";
             this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
@@ -393,8 +384,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTresActionPerformed
 
     private void btnQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuatroActionPerformed
-        // TODO add your handling code here:
-        if(verificarOperador()){
+        if (verificarOperador()) {
             // tem operador
             this.segundoNumero += "4";
             this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
@@ -406,8 +396,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnQuatroActionPerformed
 
     private void btnCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCincoActionPerformed
-        // TODO add your handling code here:
-        if(verificarOperador()){
+        if (verificarOperador()) {
             // tem operador
             this.segundoNumero += "5";
             this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
@@ -419,8 +408,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCincoActionPerformed
 
     private void btnSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeisActionPerformed
-        // TODO add your handling code here:
-        if(verificarOperador()){
+        if (verificarOperador()) {
             // tem operador
             this.segundoNumero += "6";
             this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
@@ -432,8 +420,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeisActionPerformed
 
     private void btnSeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeteActionPerformed
-        // TODO add your handling code here:
-        if(verificarOperador()){
+        if (verificarOperador()){
             // tem operador
             this.segundoNumero += "7";
             this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
@@ -445,25 +432,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeteActionPerformed
 
     private void btnZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZeroActionPerformed
-        // TODO add your handling code here:
-        if(verificarOperador()){
+        if (verificarOperador()) {
             // tem operador
-            if(verificarSegundoNumero()){
-                this.segundoNumero += "0";
-                this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
-            }
+            this.segundoNumero += "0";
+            this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
         } else {
             // não tem operador
-            if(verificarPrimeiroNumero()){
-                this.primeiroNumero += "0";
-                this.edtTela.setText(this.primeiroNumero);
-            }
+            this.primeiroNumero += "0";
+            this.edtTela.setText(this.primeiroNumero);
         }
     }//GEN-LAST:event_btnZeroActionPerformed
 
     private void btnNoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoveActionPerformed
-        // TODO add your handling code here:
-        if(verificarOperador()){
+        if (verificarOperador()) {
             // tem operador
             this.segundoNumero += "9";
             this.edtTela.setText(this.primeiroNumero + this.operador + this.segundoNumero);
@@ -475,57 +456,100 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNoveActionPerformed
 
     private void btnMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicacaoActionPerformed
-        // TODO add your handling code here:
-        if(verificarPrimeiroNumero() && !verificarSegundoNumero()){
+        if (verificarSegundoNumero()) {
+            JOptionPane.showMessageDialog(this, "Segundo numero ja foi digitado!");
+        } else if (!verificarPrimeiroNumero()) {
+            JOptionPane.showMessageDialog(this, "Digite o primeiro numero antes da operacao!");
+        } else if (verificarOperador()) {
+            JOptionPane.showMessageDialog(this, "Operador ja selecionado!");
+        } else {
             this.operador = " * ";
             this.edtTela.setText(this.primeiroNumero + this.operador);
         }
+        
     }//GEN-LAST:event_btnMultiplicacaoActionPerformed
 
     private void btnDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisaoActionPerformed
-        // TODO add your handling code here:
-        if(verificarPrimeiroNumero() && !verificarSegundoNumero()){
+        if (verificarSegundoNumero()) {
+            JOptionPane.showMessageDialog(this, "Segundo numero ja foi digitado!");
+        } else if (!verificarPrimeiroNumero()) {
+            JOptionPane.showMessageDialog(this, "Digite o primeiro numero antes da operacao!");
+        } else if (verificarOperador()) {
+            JOptionPane.showMessageDialog(this, "Operador ja selecionado!");
+        } else {
             this.operador = " / ";
             this.edtTela.setText(this.primeiroNumero + this.operador);
         }
     }//GEN-LAST:event_btnDivisaoActionPerformed
 
     private void btnAdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicaoActionPerformed
-        // TODO add your handling code here:
-        if(verificarPrimeiroNumero() && !verificarSegundoNumero()){
+        if (verificarSegundoNumero()) {
+            JOptionPane.showMessageDialog(this, "Segundo numero ja foi digitado!");
+        } else if (!verificarPrimeiroNumero()) {
+            JOptionPane.showMessageDialog(this, "Digite o primeiro numero antes da operacao!");
+        } else if (verificarOperador()) {
+            JOptionPane.showMessageDialog(this, "Operador ja selecionado!");
+        } else {
             this.operador = " + ";
             this.edtTela.setText(this.primeiroNumero + this.operador);
         }
     }//GEN-LAST:event_btnAdicaoActionPerformed
 
     private void btnSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtracaoActionPerformed
-        // TODO add your handling code here:
-        if(verificarPrimeiroNumero() && !verificarSegundoNumero()){
+        if (verificarSegundoNumero()) {
+            JOptionPane.showMessageDialog(this, "Segundo numero ja foi digitado!");
+        } else if (!verificarPrimeiroNumero()) {
+            JOptionPane.showMessageDialog(this, "Digite o primeiro numero antes da operacao!");
+        } else if (verificarOperador()) {
+            JOptionPane.showMessageDialog(this, "Operador ja selecionado!");
+        } else {
             this.operador = " - ";
             this.edtTela.setText(this.primeiroNumero + this.operador);
         }
     }//GEN-LAST:event_btnSubtracaoActionPerformed
 
     private void btnResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoActionPerformed
-        // TODO add your handling code here:
-        if(verificarOperador() && verificarPrimeiroNumero() && verificarSegundoNumero()){
+        if (verificarOperador() && verificarPrimeiroNumero() && verificarSegundoNumero()) {
             int primeiroNumConvertido = Integer.parseInt(this.primeiroNumero);
             int segundoNumConvertido = Integer.parseInt(this.segundoNumero);
             int resultado = 0;
             
             switch (this.operador) {
                 case " + ": 
-                    resultado = (primeiroNumConvertido + segundoNumConvertido);
+                    try {
+                        resultado = Operacoes.adicao(primeiroNumConvertido, segundoNumConvertido);
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(this, e.getMessage());
+                        resultado = 0;
+                    }
+                    
                     break;
                 case " - ":  
-                    resultado = (primeiroNumConvertido - segundoNumConvertido);
+                    try {
+                        resultado = Operacoes.subtracao(primeiroNumConvertido, segundoNumConvertido);
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(this, e.getMessage());
+                        resultado = 0;
+                    }
                     break;
                 case " / ": 
-                    resultado = (primeiroNumConvertido / segundoNumConvertido);
+                    
+                    try {
+                        resultado = Operacoes.divisao(primeiroNumConvertido, segundoNumConvertido);
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(this, e.getMessage());
+                        resultado = 0;
+                    }
                     break;
-                case " * ": resultado = (primeiroNumConvertido * segundoNumConvertido);
+                case " * ":
+                    try {
+                        resultado = Operacoes.multiplicacao(primeiroNumConvertido, segundoNumConvertido);
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(this, e.getMessage());
+                        resultado = 0;
+                    }
                     break;
-            }
+            } 
             
             String auxResultado = String.valueOf(resultado);
             this.primeiroNumero = auxResultado;
@@ -534,6 +558,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
             
             this.edtTela.setText(auxResultado);
             
+        } else {
+            JOptionPane.showMessageDialog(this, "Equacao invalida!");
         }
     }//GEN-LAST:event_btnResultadoActionPerformed
 
